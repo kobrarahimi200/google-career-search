@@ -1,4 +1,14 @@
-<script setup lang="ts"></script>
 <template>
-  <h1 class="mt-8 text-6xl text-center">Hello World</h1>
+  <MainNavVue></MainNavVue>
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import MainNavVue from './components/MainNav.vue';
+
+export default defineComponent({
+  components:{
+    MainNavVue,
+  }
+});
+</script>
+

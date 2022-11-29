@@ -1,4 +1,11 @@
-const fruits: string[] = ["Apple", "banana", "Orange"];
-const vegetables: string[] = ["Cucumber", "Radish"];
-
-console.log([...fruits, vegetables]);
+const developer = {
+  salay: 20000,
+  exprience: 4,
+  lookingForWork: true,
+  techStack: ["Vue", "HTML"],
+  doubleSalary() {
+    this.salay = this.salay * 2;
+    this.lookingForWork = false;
+  }
+};
+console.log(developer.salay);

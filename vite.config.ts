@@ -11,4 +11,8 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  // test: {
+  //   globals: true, //enales test functions
+  //   setupFiles: ["./tests/setup.js"],
+  // },
 });
