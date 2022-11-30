@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
@@ -11,8 +12,8 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  // test: {
-  //   globals: true, //enales test functions
-  //   setupFiles: ["./tests/setup.js"],
-  // },
+  test: {
+    globals: true, //enables test functions
+    // setupFiles: ["./tests/setup.js"],
+  },
 });

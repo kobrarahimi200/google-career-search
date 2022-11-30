@@ -1,6 +1,6 @@
-import {cleanup} from "@testing-library/vue";
+import { cleanup } from "@testing-library/vue";
 import matchers from "@testing-library/matchers";
-import {expect, afterEach} from "vitest";
+import { expect, afterEach } from "vitest";
 
 expect.extend(matchers);
 afterEach(() => {
