@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { render, screen } from "@testing-library/vue";
-import userEvent from "@testing-library/user-event";
 import TheSubNavVue from '@/components/TheSubNav.vue';
 
 import "@testing-library/jest-dom";
