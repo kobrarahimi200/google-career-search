@@ -1,4 +1,3 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { render, screen } from '@testing-library/vue';
 import TheHeadlineVue from '@/components/TheHeadline.vue';
 import { vi } from 'vitest';
@@ -27,7 +26,7 @@ describe("TheHeadline", () => {
       // vi.useFakeTimers(); //stop the interval for testing
       render(TheHeadlineVue);
       const actionPhrase = screen.getByRole("heading", {
-        name: /build for every one/i,
+        name: /build for everyone/i,
       });
       expect(actionPhrase).toBeInTheDocument();
       // vi.useRealTimers(); //resume again the interval 
@@ -48,7 +47,7 @@ describe("TheHeadline", () => {
       vi.advanceTimersToNextTimer();//move interval to the next interval one step
       await nextTick();
       const actionPhrase = screen.getByRole("heading", {
-        name: /create for every one/i,
+        name: /create for everyone/i,
       });
       expect(actionPhrase).toBeInTheDocument();
       // vi.useRealTimers();

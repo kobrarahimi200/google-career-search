@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 class="mb-14 text-8xl font-bold tracking-tighter">
-      <span :class="actionlass">{{ action }} </span> <br />for every one
+      <span :class="actionlass">{{ action }} </span> <br />for everyone
     </h1>
     <h2 class="text-3xl font-light">find you next job</h2>
   </section>
