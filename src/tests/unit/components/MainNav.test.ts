@@ -4,19 +4,23 @@ import MainNavVue from '@/components/MainNav.vue';
 import userEvent from "@testing-library/user-event";
 
 import "@testing-library/jest-dom";
+import { RouterLinkStub } from '@vue/test-utils';
 
 
 describe("MainNavVue", () => {
+  const $route = { name: "Home" };
   it("diplays company name", () => {
-    render(MainNavVue
-      // ,{//override the company value 
-      // data() {
-      //   return {
-      //     company: "Super Careers",
-      //   }
-      // }
-      // }
-    );
+    render(MainNavVue, {
+      global: {
+        mocks: {
+          $route,
+        },
+        stubs: {
+          FontAwesomeIcon: true,
+          RouterLink: RouterLinkStub,
+        },
+      },
+    });
     // screen.debug();
     const companyName = screen.getByText("Bobo Careers");
     expect(companyName).toBeDefined();

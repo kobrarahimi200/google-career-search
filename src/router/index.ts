@@ -1,9 +1,8 @@
 // @/router
-
-import { createRouter, createWebHashHistory } from 'vue-router';
-import HomeViewVue from '@/HomeView.vue';
-import JobSearchFormVue from '@/components/JonSearch/JobSearchForm.vue';
-
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeViewVue from "@/views/HomeView.vue";
+import JobReseultsViewVue from "@/views/JobReseultsView.vue";
+import JobView from "@/views/JobView.vue";
 const routes = [
   {
     path: "/",
@@ -13,7 +12,12 @@ const routes = [
   {
     path: "/jobs/results",
     name: "jobResults",
-    component: JobSearchFormVue,
+    component: JobReseultsViewVue,
+  },
+  {
+    path: "/jobs/results/:id", //dynamic section is :id
+    name: "jobListing",
+    component: JobView,
   },
 ];
 

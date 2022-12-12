@@ -4,11 +4,15 @@
       <div
         class="mx-auto flex flex-nowrap h-full border-b border-solid border-brand-gray-1 px-8"
       >
-        <a :href="url" class="flex h-full items-center text-xl"> {{ company }}</a>
+        <router-link :to="{ name: 'Home' }" class="flex h-full items-center text-xl">
+          Bobo Careers
+        </router-link>
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
             <li v-for="item in menuItems" :key="item" class="ml-9 h-full first:ml-0">
-              <a href="" class="flex h-full items-center py-2.5">{{ item }}</a>
+              <router-link :to="item.url" class="flex h-full items-center py-2.5">{{
+                item.text
+              }}</router-link>
             </li>
           </ul>
         </nav>
@@ -36,10 +40,13 @@ export default defineComponent({
   },
   data() {
     return {
-      company: "Bobo Careers",
       author: "Kobra",
-      url: "https://careers.google.com",
-      menuItems: ["Teams", "Location", "Bobo at life Corp", "How we hire", "Jobs"],
+      menuItems: [
+        { text: "Location", url: "/" },
+        { text: "Bobo at life Corp", url: "/" },
+        { text: "How we hire", url: "/" },
+        { text: "Jobs", url: "/jobs/results" },
+      ],
       isLoggedIn: false,
     };
   },
