@@ -41,7 +41,7 @@ export default defineComponent({
         name: "jobResults",
         query: { role: this.role, location: this.location },
       });
-      console.log(this.$route.params);
+      // console.log(this.$route.params);
     },
   },
 });

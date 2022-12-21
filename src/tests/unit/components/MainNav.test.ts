@@ -5,13 +5,18 @@ import userEvent from "@testing-library/user-event";
 
 import "@testing-library/jest-dom";
 import { RouterLinkStub } from '@vue/test-utils';
+import { createTestingPinia } from "@pinia/testing";
+import { useUserStore } from "@/stores/user";
 
 
 describe("MainNavVue", () => {
   const $route = { name: "Home" };
+  const pinia = createTestingPinia({ stubActions: false });
   it("diplays company name", () => {
+
     render(MainNavVue, {
       global: {
+        plugins: [pinia],
         mocks: {
           $route,
         },
@@ -36,9 +41,11 @@ describe("MainNavVue", () => {
 describe("MainNav", () => {
   it("displays user profile image", async () => {
     render(MainNavVue);
+    const userStore = useUserStore(); //mocking all store actions
     const loginBtn = screen.getByRole("button", {
       name: /Sign in/i,
     });
+    userStore.
     await userEvent.click(loginBtn);
     const img = screen.getByRole("img", {
       name: /user profile/i,
